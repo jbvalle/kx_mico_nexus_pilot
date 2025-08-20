@@ -37,17 +37,20 @@ _gen/obj/%.o : %.c | mkdir_obj
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 # Link
-$(TARGET): $(OBJ)
+$(TARGET): $(OBJ) | mkdir_gen
 	$(CC) $(CFLAGS) $(LFLAGS) -o $@ $^
 
 # Ensure base obj dir exists
 mkdir_obj:
 	mkdir -p _gen/obj
 
+mkdir_gen:
+	mkdir -p _gen
+
 # Flash
 flash: FORCE
 	openocd -f $(OPENOCD_IF) -f $(OPENOCD_TARGET) &
-	gdb-multiarch $(TARGET) -x bsw/sys/flash.gdb
+	gdb-multiarch $(TARGET) -x tools/flash.gdb
 
 # Memory report
 mem_report: FORCE
@@ -55,7 +58,7 @@ mem_report: FORCE
 
 # Clean
 clean:
-	rm -rf _gen/obj _gen/*.elf _gen/*.map log/*
+	rm -rf _gen/obj _gen/*.elf _gen/*.map log/* _gen/
 
 FORCE:
 
