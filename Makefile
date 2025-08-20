@@ -47,14 +47,17 @@ mkdir_obj:
 mkdir_gen:
 	mkdir -p _gen
 
+mkdir_log:
+	mkdir -p _log
+
 # Flash
 flash: FORCE
 	openocd -f $(OPENOCD_IF) -f $(OPENOCD_TARGET) &
 	gdb-multiarch $(TARGET) -x tools/flash.gdb
 
 # Memory report
-mem_report: FORCE
-	python tools/mem_visualizer.py -o log/mem_layout.html _gen/main.map
+mem_report: FORCE | mkdir_log
+	python tools/mem_visualizer.py -o _log/mem_layout.html _gen/main.map
 
 # Clean
 clean:

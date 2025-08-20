@@ -1,0 +1,614 @@
+memory_regions:
+- name: SRAM
+  origin: 536870912
+  length: 98304
+  attributes: xrw
+- name: FLASH
+  origin: 134217728
+  length: 524288
+  attributes: xr
+sections:
+- name: .vector_table
+  address: '0x8000000'
+  size: 404
+  region: FLASH
+  symbols: []
+- name: .vector_table
+  address: '0x8000000'
+  size: 404
+  region: FLASH
+  symbols:
+  - name: vt_ptr
+    address: '0x8000000'
+    size: 404
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+- name: .text
+  address: '0x8000194'
+  size: 600
+  region: FLASH
+  symbols: []
+- name: .text
+  address: '0x8000194'
+  size: 356
+  region: FLASH
+  symbols:
+  - name: gpio_init
+    address: '0x8000194'
+    size: 212
+    object_file: _gen/obj/bsw/mcal/kx_gpio/gpio.o
+  - name: gpio_write
+    address: '0x8000268'
+    size: 100
+    object_file: _gen/obj/bsw/mcal/kx_gpio/gpio.o
+  - name: gpio_read
+    address: '0x80002cc'
+    size: 44
+    object_file: _gen/obj/bsw/mcal/kx_gpio/gpio.o
+- name: .text
+  address: '0x80002f8'
+  size: 104
+  region: FLASH
+  symbols:
+  - name: Reset_handler
+    address: '0x80002f8'
+    size: 96
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: UART2_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXTI15_10_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA1_Stream7_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: UART1_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: TIM1_UP_TIM10_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXTI0_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA1_Stream1_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: SDIO_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: NMI_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA2_Stream3_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: TIM2_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: SPI3_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: TIM3_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: WWDG_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: UART6_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: SPI2_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: UsuageFault_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: SVCall_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA2_Stream6_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DebugMonitor_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: I2C3_ER_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA1_Stream3_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: MemManage_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: SPI4_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: HardFault_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA1_Stream5_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: FPU_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA2_Stream5_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXITI21_TAMP_STAMP_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXTI18_OTG_FS_WKUP_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: RCC_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: Systick_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXTI2_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA2_Stream1_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: I2C1_ER_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXTI9_5__handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXTI17_RTC_Alarm_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: I2C2_EV_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXITI22_RTC_WKUP_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXTI3_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA2_Stream0_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: FLASH_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: OTG_FS_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA1_Stream4_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: I2C2_ER_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: TIM1_BRK_TIM9_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: TIM4_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA1_Stream2_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXTI4_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA1_Stream6_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: ADC_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: I2C1_EV_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: SPI1_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA2_Stream4_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: PendSV_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA2_Stream7_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA1_Stream0_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: DMA2_Stream2_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXTI1_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: TIM1_TRG_COM_TIM11_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: TIM5_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: EXITI16_PVD__handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: I2C3_EV_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: BusFault_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: TIM1_CC_handler
+    address: '0x8000358'
+    size: 0
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+  - name: Default_handler
+    address: '0x8000358'
+    size: 8
+    object_file: _gen/obj/bsw/sys/startup_STM32F4.o
+- name: .text
+  address: '0x8000360'
+  size: 120
+  region: FLASH
+  symbols:
+  - name: wait_ms
+    address: '0x8000360'
+    size: 60
+    object_file: _gen/obj/bsw/sys/main.o
+  - name: main
+    address: '0x800039c'
+    size: 60
+    object_file: _gen/obj/bsw/sys/main.o
+- name: .text
+  address: '0x80003d8'
+  size: 0
+  region: FLASH
+  symbols: []
+- name: .rodata
+  address: '0x80003d8'
+  size: 12
+  region: FLASH
+  symbols:
+  - name: GpioPorts
+    address: '0x80003d8'
+    size: 12
+    object_file: _gen/obj/bsw/mcal/kx_gpio/gpio.o
+- name: .rodata
+  address: '0x80003e4'
+  size: 5
+  region: FLASH
+  symbols:
+  - name: GpioConfig
+    address: '0x80003e4'
+    size: 4
+    object_file: _gen/obj/conf/cfg_mcal/cfg_gpio/cfg_gpio.o
+  - name: GpioConfigCount
+    address: '0x80003e8'
+    size: 4
+    object_file: _gen/obj/conf/cfg_mcal/cfg_gpio/cfg_gpio.o
+  - name: _sidata
+    address: '0x80003ec'
+    size: -3
+    object_file: _gen/obj/conf/cfg_mcal/cfg_gpio/cfg_gpio.o
+- name: .glue_7
+  address: '0x80003ec'
+  size: 0
+  region: FLASH
+  symbols: []
+- name: .glue_7t
+  address: '0x80003ec'
+  size: 0
+  region: FLASH
+  symbols: []
+- name: .vfp11_veneer
+  address: '0x80003ec'
+  size: 0
+  region: FLASH
+  symbols: []
+- name: .v4_bx
+  address: '0x80003ec'
+  size: 0
+  region: FLASH
+  symbols: []
+- name: .iplt
+  address: '0x80003ec'
+  size: 0
+  region: FLASH
+  symbols: []
+- name: .iplt
+  address: '0x80003ec'
+  size: 0
+  region: FLASH
+  symbols: []
+- name: .rel.dyn
+  address: '0x80003ec'
+  size: 0
+  region: FLASH
+  symbols: []
+- name: .rel.iplt
+  address: '0x80003ec'
+  size: 0
+  region: FLASH
+  symbols:
+  - name: _sdata
+    address: '0x20000000'
+    size: -402652180
+    object_file: null
+- name: .data
+  address: '0x20000000'
+  size: 0
+  region: SRAM
+  symbols: []
+- name: .data
+  address: '0x20000000'
+  size: 0
+  region: SRAM
+  symbols: []
+- name: .data
+  address: '0x20000000'
+  size: 0
+  region: SRAM
+  symbols: []
+- name: .data
+  address: '0x20000000'
+  size: 0
+  region: SRAM
+  symbols:
+  - name: _edata
+    address: '0x20000000'
+    size: 0
+    object_file: _gen/obj/conf/cfg_mcal/cfg_gpio/cfg_gpio.o
+- name: .igot.plt
+  address: '0x20000000'
+  size: 0
+  region: SRAM
+  symbols:
+  - name: _sbss
+    address: '0x20000000'
+    size: 0
+    object_file: null
+- name: .bss
+  address: '0x20000000'
+  size: 0
+  region: SRAM
+  symbols: []
+- name: .bss
+  address: '0x20000000'
+  size: 0
+  region: SRAM
+  symbols: []
+- name: .bss
+  address: '0x20000000'
+  size: 0
+  region: SRAM
+  symbols: []
+- name: .bss
+  address: '0x20000000'
+  size: 0
+  region: SRAM
+  symbols:
+  - name: _ebss
+    address: '0x20000000'
+    size: 0
+    object_file: _gen/obj/conf/cfg_mcal/cfg_gpio/cfg_gpio.o
+- name: .debug_info
+  address: '0x0'
+  size: 2307
+  region: unknown
+  symbols: []
+- name: .debug_info
+  address: '0x0'
+  size: 1047
+  region: unknown
+  symbols: []
+- name: .debug_info
+  address: '0x417'
+  size: 354
+  region: unknown
+  symbols: []
+- name: .debug_info
+  address: '0x579'
+  size: 507
+  region: unknown
+  symbols: []
+- name: .debug_info
+  address: '0x774'
+  size: 399
+  region: unknown
+  symbols: []
+- name: .debug_abbrev
+  address: '0x0'
+  size: 1187
+  region: unknown
+  symbols: []
+- name: .debug_abbrev
+  address: '0x0'
+  size: 391
+  region: unknown
+  symbols: []
+- name: .debug_abbrev
+  address: '0x187'
+  size: 266
+  region: unknown
+  symbols: []
+- name: .debug_abbrev
+  address: '0x291'
+  size: 314
+  region: unknown
+  symbols: []
+- name: .debug_abbrev
+  address: '0x3cb'
+  size: 216
+  region: unknown
+  symbols: []
+- name: .debug_aranges
+  address: '0x0'
+  size: 120
+  region: unknown
+  symbols: []
+- name: .debug_line
+  address: '0x0'
+  size: 1118
+  region: unknown
+  symbols: []
+- name: .debug_line
+  address: '0x0'
+  size: 513
+  region: unknown
+  symbols: []
+- name: .debug_line
+  address: '0x201'
+  size: 211
+  region: unknown
+  symbols: []
+- name: .debug_line
+  address: '0x2d4'
+  size: 260
+  region: unknown
+  symbols: []
+- name: .debug_line
+  address: '0x3d8'
+  size: 134
+  region: unknown
+  symbols: []
+- name: .debug_str
+  address: '0x0'
+  size: 1019
+  region: unknown
+  symbols: []
+- name: .debug_str
+  address: '0x0'
+  size: 779
+  region: unknown
+  symbols: []
+- name: .debug_str
+  address: '0x30b'
+  size: 115
+  region: unknown
+  symbols: []
+- name: .debug_str
+  address: '0x37e'
+  size: 91
+  region: unknown
+  symbols: []
+- name: .debug_str
+  address: '0x3d9'
+  size: 34
+  region: unknown
+  symbols: []
+- name: .comment
+  address: '0x0'
+  size: 38
+  region: unknown
+  symbols: []
+- name: .comment
+  address: '0x0'
+  size: 38
+  region: unknown
+  symbols: []
+- name: .comment
+  address: '0x26'
+  size: 39
+  region: unknown
+  symbols: []
+- name: .comment
+  address: '0x26'
+  size: 39
+  region: unknown
+  symbols: []
+- name: .comment
+  address: '0x26'
+  size: 39
+  region: unknown
+  symbols: []
+- name: .debug_frame
+  address: '0x0'
+  size: 296
+  region: unknown
+  symbols: []
+- name: .debug_frame
+  address: '0x0'
+  size: 136
+  region: unknown
+  symbols: []
+- name: .debug_frame
+  address: '0x88'
+  size: 76
+  region: unknown
+  symbols: []
+- name: .debug_frame
+  address: '0xd4'
+  size: 84
+  region: unknown
+  symbols: []
