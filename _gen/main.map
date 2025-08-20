@@ -1,0 +1,183 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+SRAM             0x20000000         0x00018000         xrw
+FLASH            0x08000000         0x00080000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD _gen/obj/bsw/sys/startup_STM32F4.o
+LOAD _gen/obj/bsw/sys/main.o
+                0x20018000                        _estack = (ORIGIN (SRAM) + LENGTH (SRAM))
+
+.vector_table   0x08000000      0x194
+                0x08000000                        . = ALIGN (0x4)
+ *(.vector_table)
+ .vector_table  0x08000000      0x194 _gen/obj/bsw/sys/startup_STM32F4.o
+                0x08000000                vt_ptr
+                0x08000194                        . = ALIGN (0x4)
+
+.text           0x08000194       0xec
+                0x08000194                        . = ALIGN (0x4)
+ *(.text)
+ .text          0x08000194       0x68 _gen/obj/bsw/sys/startup_STM32F4.o
+                0x08000194                Reset_handler
+                0x080001f4                UART2_handler
+                0x080001f4                EXTI15_10_handler
+                0x080001f4                DMA1_Stream7_handler
+                0x080001f4                UART1_handler
+                0x080001f4                TIM1_UP_TIM10_handler
+                0x080001f4                EXTI0_handler
+                0x080001f4                DMA1_Stream1_handler
+                0x080001f4                SDIO_handler
+                0x080001f4                NMI_handler
+                0x080001f4                DMA2_Stream3_handler
+                0x080001f4                TIM2_handler
+                0x080001f4                SPI3_handler
+                0x080001f4                TIM3_handler
+                0x080001f4                WWDG_handler
+                0x080001f4                UART6_handler
+                0x080001f4                SPI2_handler
+                0x080001f4                UsuageFault_handler
+                0x080001f4                SVCall_handler
+                0x080001f4                DMA2_Stream6_handler
+                0x080001f4                DebugMonitor_handler
+                0x080001f4                I2C3_ER_handler
+                0x080001f4                DMA1_Stream3_handler
+                0x080001f4                MemManage_handler
+                0x080001f4                SPI4_handler
+                0x080001f4                HardFault_handler
+                0x080001f4                DMA1_Stream5_handler
+                0x080001f4                FPU_handler
+                0x080001f4                DMA2_Stream5_handler
+                0x080001f4                EXITI21_TAMP_STAMP_handler
+                0x080001f4                EXTI18_OTG_FS_WKUP_handler
+                0x080001f4                RCC_handler
+                0x080001f4                Systick_handler
+                0x080001f4                EXTI2_handler
+                0x080001f4                DMA2_Stream1_handler
+                0x080001f4                I2C1_ER_handler
+                0x080001f4                EXTI9_5__handler
+                0x080001f4                EXTI17_RTC_Alarm_handler
+                0x080001f4                I2C2_EV_handler
+                0x080001f4                EXITI22_RTC_WKUP_handler
+                0x080001f4                EXTI3_handler
+                0x080001f4                DMA2_Stream0_handler
+                0x080001f4                FLASH_handler
+                0x080001f4                OTG_FS_handler
+                0x080001f4                DMA1_Stream4_handler
+                0x080001f4                I2C2_ER_handler
+                0x080001f4                TIM1_BRK_TIM9_handler
+                0x080001f4                TIM4_handler
+                0x080001f4                DMA1_Stream2_handler
+                0x080001f4                EXTI4_handler
+                0x080001f4                DMA1_Stream6_handler
+                0x080001f4                ADC_handler
+                0x080001f4                I2C1_EV_handler
+                0x080001f4                SPI1_handler
+                0x080001f4                DMA2_Stream4_handler
+                0x080001f4                PendSV_handler
+                0x080001f4                DMA2_Stream7_handler
+                0x080001f4                DMA1_Stream0_handler
+                0x080001f4                DMA2_Stream2_handler
+                0x080001f4                EXTI1_handler
+                0x080001f4                TIM1_TRG_COM_TIM11_handler
+                0x080001f4                TIM5_handler
+                0x080001f4                EXITI16_PVD__handler
+                0x080001f4                I2C3_EV_handler
+                0x080001f4                BusFault_handler
+                0x080001f4                TIM1_CC_handler
+                0x080001f4                Default_handler
+ .text          0x080001fc       0x84 _gen/obj/bsw/sys/main.o
+                0x080001fc                wait_ms
+                0x08000238                main
+ *(.text.*)
+ *(.rodata)
+ *(.rodata.*)
+                0x08000280                        . = ALIGN (0x4)
+                0x08000280                        _sidata = LOADADDR (.data)
+
+.glue_7         0x08000280        0x0
+ .glue_7        0x08000280        0x0 linker stubs
+
+.glue_7t        0x08000280        0x0
+ .glue_7t       0x08000280        0x0 linker stubs
+
+.vfp11_veneer   0x08000280        0x0
+ .vfp11_veneer  0x08000280        0x0 linker stubs
+
+.v4_bx          0x08000280        0x0
+ .v4_bx         0x08000280        0x0 linker stubs
+
+.iplt           0x08000280        0x0
+ .iplt          0x08000280        0x0 _gen/obj/bsw/sys/startup_STM32F4.o
+
+.rel.dyn        0x08000280        0x0
+ .rel.iplt      0x08000280        0x0 _gen/obj/bsw/sys/startup_STM32F4.o
+
+.data           0x20000000        0x0 load address 0x08000280
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ .data          0x20000000        0x0 _gen/obj/bsw/sys/startup_STM32F4.o
+ .data          0x20000000        0x0 _gen/obj/bsw/sys/main.o
+ *(.data.*)
+                0x20000000                        _edata = .
+                0x20000000                        . = ALIGN (0x4)
+
+.igot.plt       0x20000000        0x0 load address 0x08000280
+ .igot.plt      0x20000000        0x0 _gen/obj/bsw/sys/startup_STM32F4.o
+
+.bss            0x20000000        0x0 load address 0x08000280
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sbss = .
+ *(.bss)
+ .bss           0x20000000        0x0 _gen/obj/bsw/sys/startup_STM32F4.o
+ .bss           0x20000000        0x0 _gen/obj/bsw/sys/main.o
+ *(.bss.*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _ebss = .
+OUTPUT(_gen/main.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000      0x43c
+ .debug_info    0x00000000      0x162 _gen/obj/bsw/sys/startup_STM32F4.o
+ .debug_info    0x00000162      0x2da _gen/obj/bsw/sys/main.o
+
+.debug_abbrev   0x00000000      0x204
+ .debug_abbrev  0x00000000      0x10a _gen/obj/bsw/sys/startup_STM32F4.o
+ .debug_abbrev  0x0000010a       0xfa _gen/obj/bsw/sys/main.o
+
+.debug_aranges  0x00000000       0x40
+ .debug_aranges
+                0x00000000       0x20 _gen/obj/bsw/sys/startup_STM32F4.o
+ .debug_aranges
+                0x00000020       0x20 _gen/obj/bsw/sys/main.o
+
+.debug_line     0x00000000      0x1cc
+ .debug_line    0x00000000       0xd3 _gen/obj/bsw/sys/startup_STM32F4.o
+ .debug_line    0x000000d3       0xf9 _gen/obj/bsw/sys/main.o
+
+.debug_str      0x00000000      0x29d
+ .debug_str     0x00000000      0x161 _gen/obj/bsw/sys/startup_STM32F4.o
+                                0x195 (size before relaxing)
+ .debug_str     0x00000161      0x13c _gen/obj/bsw/sys/main.o
+                                0x268 (size before relaxing)
+
+.comment        0x00000000       0x26
+ .comment       0x00000000       0x26 _gen/obj/bsw/sys/startup_STM32F4.o
+                                 0x27 (size before relaxing)
+ .comment       0x00000026       0x27 _gen/obj/bsw/sys/main.o
+
+.ARM.attributes
+                0x00000000       0x2e
+ .ARM.attributes
+                0x00000000       0x2e _gen/obj/bsw/sys/startup_STM32F4.o
+ .ARM.attributes
+                0x0000002e       0x2e _gen/obj/bsw/sys/main.o
+
+.debug_frame    0x00000000       0xa0
+ .debug_frame   0x00000000       0x4c _gen/obj/bsw/sys/startup_STM32F4.o
+ .debug_frame   0x0000004c       0x54 _gen/obj/bsw/sys/main.o

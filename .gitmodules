@@ -10,3 +10,6 @@
 [submodule "app"]
 	path = app
 	url = git@github.com:jbvalle/app.git
+[submodule "tools"]
+	path = tools
+	url = git@github.com:jbvalle/tools.git
