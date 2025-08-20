@@ -54,7 +54,7 @@ flash: FORCE
 
 # Memory report
 mem_report: FORCE
-	python tools/mem_vis.py -o log/mem_layout.html _gen/main.map
+	python tools/mem_visualizer.py -o log/mem_layout.html _gen/main.map
 
 # Clean
 clean:
