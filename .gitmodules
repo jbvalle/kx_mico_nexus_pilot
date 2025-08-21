@@ -1,6 +1,3 @@
-[submodule "kx_conf"]
-	path = kx_conf
-	url = git@github.com:jbvalle/kx_conf.git
 [submodule "conf"]
 	path = conf
 	url = git@github.com:jbvalle/kx_conf.git
