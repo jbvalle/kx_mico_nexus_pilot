@@ -61,7 +61,7 @@ mem_report: FORCE | mkdir_log
 
 # Clean
 clean:
-	rm -rf _gen/obj _gen/*.elf _gen/*.map log/* _gen/
+	rm -rf _gen/obj _gen/*.elf _gen/*.map log/* _gen/ _log
 
 FORCE:
 
