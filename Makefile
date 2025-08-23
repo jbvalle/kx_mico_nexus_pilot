@@ -1,19 +1,19 @@
 CC = arm-none-eabi-gcc
 
-# Find all C source files recursively
-SRC := $(shell find . -name "*.c")
+# Find all C source files recursively, skipping directories starting with '.' or '_'
+SRC := $(shell find . -mindepth 1 \( -type d \( -name '.*' -o -name '_*' \) -prune \) -o -name '*.c' -print)
 
 # Generate object paths under _gen/obj
 OBJ := $(patsubst ./%, _gen/obj/%, $(SRC:.c=.o))
 
-# Find linker script(s)
-LINKER := $(shell find . -name "*.ld")
+# Find linker script(s), skipping hidden/underscore dirs
+LINKER := $(shell find . -mindepth 1 \( -type d \( -name '.*' -o -name '_*' \) -prune \) -o -name '*.ld' -print)
 
 # Architecture
 MARCH = cortex-m4
 
-# Collect all dirs for -I (so headers anywhere are visible)
-INCLUDE_DIRS := $(shell find . -type d)
+# Collect all dirs for -I (so headers anywhere are visible), skipping hidden/underscore dirs
+INCLUDE_DIRS := $(shell find . -mindepth 1 \( -type d \( -name '.*' -o -name '_*' \) -prune \) -o -type d -print)
 CFLAGS = -g -Wall -mcpu=$(MARCH) -mthumb -mfloat-abi=soft \
          $(addprefix -I,$(INCLUDE_DIRS)) \
          -ffreestanding -nostartfiles
